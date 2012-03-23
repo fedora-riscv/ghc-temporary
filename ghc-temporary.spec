@@ -15,7 +15,7 @@ it being installed.
 
 Name:           ghc-%{pkg_name}
 Version:        1.1.2.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        %{common_summary}
 
 Group:          System Environment/Libraries
@@ -54,10 +54,13 @@ BuildRequires:  ghc-directory-devel
 %ghc_devel_post_postun
 
 
-%ghc_files
+%ghc_files LICENSE
 
 
 %changelog
+* Fri Mar 23 2012 Jens Petersen <petersen@redhat.com> - 1.1.2.3-2
+- add license to ghc_files
+
 * Tue Feb  7 2012 Jens Petersen <petersen@redhat.com> - 1.1.2.3-1
 - BSD license
 
