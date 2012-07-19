@@ -15,7 +15,7 @@ it being installed.
 
 Name:           ghc-%{pkg_name}
 Version:        1.1.2.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        %{common_summary}
 
 Group:          System Environment/Libraries
@@ -58,6 +58,9 @@ BuildRequires:  ghc-directory-devel
 
 
 %changelog
+* Thu Jul 19 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.2.3-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+
 * Fri Mar 23 2012 Jens Petersen <petersen@redhat.com> - 1.1.2.3-2
 - add license to ghc_files
 
