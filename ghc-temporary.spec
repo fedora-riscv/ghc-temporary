@@ -1,4 +1,3 @@
-# cabal2spec-0.25.4
 # https://fedoraproject.org/wiki/Packaging:Haskell
 # https://fedoraproject.org/wiki/PackagingDrafts/Haskell
 
@@ -14,20 +13,21 @@ so that you can use them without linking against Cabal or depending on\
 it being installed.
 
 Name:           ghc-%{pkg_name}
-Version:        1.1.2.3
-Release:        3%{?dist}
+Version:        1.1.2.4
+Release:        1%{?dist}
 Summary:        %{common_summary}
 
-Group:          System Environment/Libraries
 License:        BSD
-# BEGIN cabal2spec
 URL:            http://hackage.haskell.org/package/%{pkg_name}
 Source0:        http://hackage.haskell.org/packages/archive/%{pkg_name}/%{version}/%{pkg_name}-%{version}.tar.gz
-ExclusiveArch:  %{ghc_arches}
+
 BuildRequires:  ghc-Cabal-devel
-BuildRequires:  ghc-rpm-macros %{!?without_hscolour:hscolour}
-# END cabal2spec
+BuildRequires:  ghc-rpm-macros
+# Begin cabal-rpm deps:
 BuildRequires:  ghc-directory-devel
+BuildRequires:  ghc-filepath-devel
+BuildRequires:  ghc-unix-devel
+# End cabal-rpm deps
 
 %description
 %{common_description}
@@ -45,7 +45,6 @@ BuildRequires:  ghc-directory-devel
 %ghc_lib_install
 
 
-# devel subpackage
 %ghc_devel_package
 
 %ghc_devel_description
@@ -58,6 +57,9 @@ BuildRequires:  ghc-directory-devel
 
 
 %changelog
+* Thu Nov 08 2012 Jens Petersen <petersen@redhat.com> - 1.1.2.4-1
+- update to 1.1.2.4
+
 * Thu Jul 19 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.2.3-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
