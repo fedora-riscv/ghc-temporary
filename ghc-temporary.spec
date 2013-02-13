@@ -14,7 +14,7 @@ it being installed.
 
 Name:           ghc-%{pkg_name}
 Version:        1.1.2.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        %{common_summary}
 
 License:        BSD
@@ -57,6 +57,9 @@ BuildRequires:  ghc-unix-devel
 
 
 %changelog
+* Wed Feb 13 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.2.4-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Thu Nov 08 2012 Jens Petersen <petersen@redhat.com> - 1.1.2.4-1
 - update to 1.1.2.4
 
