@@ -1,21 +1,11 @@
 # https://fedoraproject.org/wiki/Packaging:Haskell
-# https://fedoraproject.org/wiki/PackagingDrafts/Haskell
 
 %global pkg_name temporary
 
-%global common_summary Portable temporary file and directory support
-
-%global common_description The functions for creating temporary files and directories in the base library\
-are quite limited. The unixutils package contains some good ones,\
-but they aren't portable to Windows. This library repackages the\
-Cabal implementations of its own temporary file and folder functions\
-so that you can use them without linking against Cabal or depending on\
-it being installed.
-
 Name:           ghc-%{pkg_name}
 Version:        1.1.2.4
-Release:        2%{?dist}
-Summary:        %{common_summary}
+Release:        3%{?dist}
+Summary:        Portable temporary file and directory support
 
 License:        BSD
 URL:            http://hackage.haskell.org/package/%{pkg_name}
@@ -30,7 +20,23 @@ BuildRequires:  ghc-unix-devel
 # End cabal-rpm deps
 
 %description
-%{common_description}
+The functions for creating temporary files and directories in the base library
+are quite limited. The unixutils package contains some good ones,
+but they aren't portable to Windows. This library repackages the
+Cabal implementations of its own temporary file and folder functions
+so that you can use them without linking against Cabal or depending on
+it being installed.
+
+
+%package devel
+Summary:        Haskell %{pkg_name} library development files
+Requires:       ghc-compiler = %{ghc_version}
+Requires(post): ghc-compiler = %{ghc_version}
+Requires(postun): ghc-compiler = %{ghc_version}
+Requires:       %{name} = %{version}-%{release}
+
+%description devel
+This package provides the Haskell %{pkg_name} library development files.
 
 
 %prep
@@ -45,18 +51,25 @@ BuildRequires:  ghc-unix-devel
 %ghc_lib_install
 
 
-%ghc_devel_package
-
-%ghc_devel_description
-
-
-%ghc_devel_post_postun
+%post devel
+%ghc_pkg_recache
 
 
-%ghc_files LICENSE
+%postun devel
+%ghc_pkg_recache
+
+
+%files -f %{name}.files
+%doc LICENSE
+
+
+%files devel -f %{name}-devel.files
 
 
 %changelog
+* Tue Jun 04 2013 Jens Petersen <petersen@redhat.com> - 1.1.2.4-3
+- update to new simplified Haskell Packaging Guidelines
+
 * Wed Feb 13 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.2.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
