@@ -6,8 +6,8 @@
 %global debug_package %{nil}
 
 Name:           ghc-%{pkg_name}
-Version:        1.2.0.3
-Release:        1%{?dist}
+Version:        1.1.2.4
+Release:        5%{?dist}
 Summary:        Portable temporary file and directory support
 
 License:        BSD
@@ -18,9 +18,7 @@ BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros
 # Begin cabal-rpm deps:
 BuildRequires:  ghc-directory-devel
-BuildRequires:  ghc-exceptions-devel
 BuildRequires:  ghc-filepath-devel
-BuildRequires:  ghc-transformers-devel
 BuildRequires:  ghc-unix-devel
 # End cabal-rpm deps
 
@@ -73,8 +71,8 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
-* Sun Jun 01 2014 Jens Petersen <petersen@redhat.com> - 1.2.0.3-1
-- update to 1.2.0.3
+* Tue Jul  8 2014 Jens Petersen <petersen@redhat.com> - 1.1.2.4-5
+- update to cblrpm-0.8.11
 
 * Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.2.4-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
