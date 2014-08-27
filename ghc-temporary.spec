@@ -6,8 +6,8 @@
 %global debug_package %{nil}
 
 Name:           ghc-%{pkg_name}
-Version:        1.1.2.4
-Release:        6%{?dist}
+Version:        1.2.0.3
+Release:        1%{?dist}
 Summary:        Portable temporary file and directory support
 
 License:        BSD
@@ -18,14 +18,16 @@ BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros
 # Begin cabal-rpm deps:
 BuildRequires:  ghc-directory-devel
+BuildRequires:  ghc-exceptions-devel
 BuildRequires:  ghc-filepath-devel
+BuildRequires:  ghc-transformers-devel
 BuildRequires:  ghc-unix-devel
 # End cabal-rpm deps
 
 %description
 The functions for creating temporary files and directories in the base library
 are quite limited. The unixutils package contains some good ones,
-but they aren't portable to Windows. This library repackages the
+but they aren't portable to Windows. This library just repackages the
 Cabal implementations of its own temporary file and folder functions
 so that you can use them without linking against Cabal or depending on
 it being installed.
@@ -71,6 +73,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Wed Aug 27 2014 Jens Petersen <petersen@redhat.com> - 1.2.0.3-1
+- update to 1.2.0.3
+
 * Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.2.4-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
