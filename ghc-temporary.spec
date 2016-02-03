@@ -7,7 +7,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        1.2.0.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Portable temporary file and directory support
 
 License:        BSD
@@ -73,6 +73,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.2.0.3-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.2.0.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
