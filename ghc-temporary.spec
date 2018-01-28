@@ -4,7 +4,11 @@
 %global pkg_name temporary
 %global pkgver %{pkg_name}-%{version}
 
+%ifnarch s390x
 %bcond_without tests
+%else
+%bcond_with tests
+%endif
 
 Name:           ghc-%{pkg_name}
 Version:        1.2.1.1
