@@ -4,8 +4,10 @@
 %global pkg_name temporary
 %global pkgver %{pkg_name}-%{version}
 
+%bcond_without tests
+
 Name:           ghc-%{pkg_name}
-Version:        1.2.0.4
+Version:        1.2.1.1
 Release:        1%{?dist}
 Summary:        Portable temporary file and directory support
 
@@ -21,6 +23,11 @@ BuildRequires:  ghc-exceptions-devel
 BuildRequires:  ghc-filepath-devel
 BuildRequires:  ghc-transformers-devel
 BuildRequires:  ghc-unix-devel
+%if %{with tests}
+BuildRequires:  ghc-base-compat-devel
+BuildRequires:  ghc-tasty-devel
+BuildRequires:  ghc-tasty-hunit-devel
+%endif
 # End cabal-rpm deps
 
 %description
@@ -59,6 +66,10 @@ This package provides the Haskell %{pkg_name} library development files.
 %ghc_lib_install
 
 
+%check
+%cabal_test
+
+
 %post -p /sbin/ldconfig
 
 
@@ -78,6 +89,7 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %files devel -f %{name}-devel.files
+%doc CHANGELOG.md
 
 
 %changelog
