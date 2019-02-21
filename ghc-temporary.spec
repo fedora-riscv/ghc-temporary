@@ -11,8 +11,8 @@
 %endif
 
 Name:           ghc-%{pkg_name}
-Version:        1.2.1.1
-Release:        6%{?dist}
+Version:        1.3
+Release:        1%{?dist}
 Summary:        Portable temporary file and directory support
 
 License:        BSD
@@ -27,6 +27,7 @@ BuildRequires:  ghc-rpm-macros
 BuildRequires:  ghc-directory-devel
 BuildRequires:  ghc-exceptions-devel
 BuildRequires:  ghc-filepath-devel
+BuildRequires:  ghc-random-devel
 BuildRequires:  ghc-transformers-devel
 BuildRequires:  ghc-unix-devel
 %if %{with tests}
@@ -101,6 +102,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Thu Feb 21 2019 Jens Petersen <petersen@redhat.com> - 1.3-1
+- update to 1.3
+
 * Sun Feb 17 2019 Jens Petersen <petersen@redhat.com> - 1.2.1.1-6
 - refresh to cabal-rpm-0.13
 
