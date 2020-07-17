@@ -12,7 +12,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        1.3
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Portable temporary file and directory support
 
 License:        BSD
@@ -125,6 +125,9 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
+* Fri Jul 17 2020 Jens Petersen <petersen@redhat.com> - 1.3-6
+- refresh to cabal-rpm-2.0.6
+
 * Wed Feb 19 2020 Jens Petersen <petersen@redhat.com> - 1.3-5
 - refresh to cabal-rpm-2.0.2
 
