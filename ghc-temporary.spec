@@ -12,7 +12,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        1.3
-Release:        12%{?dist}
+Release:        13%{?dist}
 Summary:        Portable temporary file and directory support
 
 License:        BSD
@@ -128,6 +128,9 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
+* Fri Jun 17 2022 Jens Petersen <petersen@redhat.com> - 1.3-13
+- rebuild
+
 * Thu Jan 20 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.3-12
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
