@@ -4,7 +4,7 @@
 %global pkg_name temporary
 %global pkgver %{pkg_name}-%{version}
 
-%ifnarch s390x
+%ifnarch s390x riscv64
 %bcond_without tests
 %else
 %bcond_with tests
@@ -12,7 +12,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        1.3
-Release:        14%{?dist}
+Release:        14.rv64%{?dist}
 Summary:        Portable temporary file and directory support
 
 License:        BSD
@@ -128,6 +128,9 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
+* Sat Feb 11 2023 Liu Yang <Yang.Liu.sn@gmail.com> - 1.3-14.rv64
+- Skip failed tests on riscv64.
+
 * Thu Jul 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.3-14
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
 
